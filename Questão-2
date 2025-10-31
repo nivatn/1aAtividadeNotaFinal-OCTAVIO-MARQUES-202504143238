@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma de Dois Números</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background-color: #caba2b;
+        }
+
+        div {
+            margin-bottom: 10px;
+        }
+
+        input {
+            margin-right: 5px;
+            padding: 8px;
+        }
+
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Calculadora de Soma</h2>
+
+    <div>
+        <input type="number" id="numero1" placeholder="Primeiro número">
+        <input type="number" id="numero2" placeholder="Segundo número">
+    </div>
+
+    <button onclick="somar()">Somar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function somar() {
+            const valor1 = document.getElementById('numero1').value;
+            const valor2 = document.getElementById('numero2').value;
+            const soma = parseFloat(valor1) + parseFloat(valor2);
+            const pResultado = document.getElementById('resultado');
+
+            if (isNaN(soma)) {
+                pResultado.textContent = 'Por favor, digite dois números válidos.';
+            } else {
+                pResultado.textContent = 'O resultado é: ' + soma;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
